@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+}
+
+/* VIDEO BACKGROUND */
+
+.video-background {
+	position: absolute;
+	z-index: -999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video-background::before {
+	content: '';
+	position: absolute;
+	z-index: -997;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .1);	
+}
+
+.video-background video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	z-index: -998;
+	top: 0;
+	left: 0;
+}
+
+/* CLOCK */
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.clock #time { 
+  font-size: 6rem; 
+  display: inline-block;
+  margin: 0;
+}
+
+.clock #greetings { 
+  font-size: 3.5rem; 
+  margin: 0;
+}
+
+.clock #ampm { 
+  font-size: 2rem; 
+}
