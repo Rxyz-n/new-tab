@@ -14,6 +14,7 @@ const $ = document.querySelector.bind(document);
 
   const video = document.createElement('video');
   video.src = `assets/${FILE_NAME}`;
+  video.className = 'video'
   video.autoplay = true;
   video.loop = true;
   video.muted = true;
