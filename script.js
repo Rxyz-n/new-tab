@@ -3,7 +3,7 @@ const FILE_NAME = 'background.jpg';
 
 const $ = document.querySelector.bind(document);
 
-(() => {
+(function() {
   const imgExtRegex = /(.jpg|.png|.jpeg)$/i;
   const fileType = imgExtRegex.test(FILE_NAME) ? 'image' : 'video';
 
@@ -15,41 +15,34 @@ const $ = document.querySelector.bind(document);
   const video = document.createElement('video');
   video.src = `assets/${FILE_NAME}`;
   video.className = 'video'
-  video.autoplay = true;
-  video.loop = true;
+  video.autoplay  = true;
+  video.loop  = true;
   video.muted = true;
 
   $('.full-screen').appendChild(video);
 })();
 
 function calcTime() {
-  const now = new Date()
-  let ampm = ''
+  const now = new Date();
+  let ampm  = 'AM',
+      asl   = 'morning',
+      hours = now.getHours(),
+      mins  = now.getMinutes();
+
+  hours > 12 && (sal = 'afternoon');
+  hours > 18 && (sal = 'evening');
+  hours > 11 && hours < 24 && (ampm = 'PM');
+  hours > 12 && (hours -= 12);
+  hours < 10 && (hours = '0' + hours);
+  mins  < 10 && (mins = '0' + mins);
+
+  render(hours, mins, sal, ampm);
 }
 
-// const calcTime = () => {
-// 	let	ampm  = "AM",
-// 			sal   = "morning",
-// 			date  = new Date(),
-// 			hours = date.getHours(),
-// 			mins  = date.getMinutes()
+function render(hours, mins, sal, ampm) {
+  $('.time').innerText = `${hours}:${mins}`;
+  $('.ampm').innerText = ampm;
+  $('.greetings').innerText = `Good ${sal}, ${YOUR_NAME}`;
+}
 
-// 	hours > 12 && (sal = "afternoon")
-// 	hours > 18 && (sal = "evening")
-// 	hours > 11 && hours < 24 && (ampm = "PM")
-// 	hours > 12 && (hours -= 12)
-// 	hours < 10 && (hours = '0' + hours)
-// 	mins  < 10 && (mins = '0' + mins)
-
-// 	renderClock(hours, mins, sal, ampm)
-// }
-
-// const renderClock = (h, m, s, a) => {
-// 	const clock = document.querySelector('.background')
-
-// 	clock.querySelector('#time').innerText = `${h}:${m}`
-// 	clock.querySelector('#ampm').innerText = a
-// 	clock.querySelector('#greetings').innerText = `Good ${s}, ${NAME}`
-// }
-
-// setInterval(calcTime, 1000)
+setInterval(calcTime, 500);
