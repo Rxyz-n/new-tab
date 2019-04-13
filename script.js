@@ -25,7 +25,7 @@ const $ = document.querySelector.bind(document);
 function calcTime() {
   const now = new Date();
   let ampm  = 'AM',
-      asl   = 'morning',
+      sal   = 'morning',
       hours = now.getHours(),
       mins  = now.getMinutes();
 
