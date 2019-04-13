@@ -6,9 +6,6 @@
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
-	"web_accessible_resources": [
-		"videos/*.mp4"
-	],
 	"permissions": [
 		"activeTab"
 	]
