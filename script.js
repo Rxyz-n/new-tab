@@ -22,6 +22,11 @@ const $ = document.querySelector.bind(document);
   $('.full-screen').appendChild(video);
 })();
 
+function calcTime() {
+  const now = new Date()
+  let ampm = ''
+}
+
 // const calcTime = () => {
 // 	let	ampm  = "AM",
 // 			sal   = "morning",

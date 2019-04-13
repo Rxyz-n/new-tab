@@ -6,7 +6,7 @@ body {
   overflow: hidden;
 	color: #fff;
 	font-family: 'Nunito', sans-serif;
-	line-height: 1.1;
+	line-height: 1;
 }
 
 .full-screen {
@@ -57,7 +57,7 @@ body {
 }
 
 .ampm {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
 }
 
