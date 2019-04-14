@@ -13,6 +13,9 @@ body {
 	width: 100%;
 	height: 100%;
   position: relative;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
 }
 
 .full-screen::before {
